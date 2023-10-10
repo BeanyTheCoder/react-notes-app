@@ -1,0 +1,82 @@
+@import "./config";
+
+.dashboard {
+  @include flex(column, center, unset, 2em);
+
+  &__search {
+    @include flex(row, space-between, stretch, 0);
+    box-shadow: 0 3px 10px 0 #00000030;
+
+    .--icon {
+      font-size: $font-large;
+      aspect-ratio: 1;
+      padding: 0.75em 1em;
+      cursor: pointer;
+    }
+
+    &__input {
+      flex-basis: 100%;
+      font-size: $font-large;
+      font-weight: 300;
+    }
+  }
+
+  &__secondary {
+    @include flex(row, space-between, center, 0);
+    font-size: $font-small;
+
+    &__tabs {
+      @include flex(row, space-between, center, 1.5em);
+
+      &__item {
+        @include button(
+          $bg-color: transparent,
+          $color: $text,
+          $padding: 0.5em 2em !important
+        );
+        min-width: 6.5em;
+        text-align: center;
+
+        &.--active {
+          --bg-cc: unset;
+          @include button(
+            $bg-color: var(--bg-cc),
+            $color: #fff,
+            $padding: 0.5em 2em !important
+          );
+        }
+
+        // &#all {
+        //   &.--active {
+        //     background-color: $primary;
+        //   }
+        // }
+
+        // &#home {
+        //   &.--active {
+        //     background-color: $bright-orange;
+        //   }
+        // }
+
+        // &#work {
+        //   &.--active {
+        //     background-color: $light-blue;
+        //   }
+        // }
+
+        // &#personal {
+        //   &.--active {
+        //     background-color: $pale-green;
+        //   }
+        // }
+      }
+    }
+
+    &__cta {
+      button {
+        @include button;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

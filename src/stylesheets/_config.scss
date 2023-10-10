@@ -1,0 +1,144 @@
+// Imports
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap";
+
+// Variables
+$primary: #2196f3;
+$text: #a3a3a3;
+$light-primary: #f5f5f5;
+$light-secondary: #f4f4f4;
+$disabled: #717572;
+$bright-orange: #ff9100;
+$pale-green: #66bb6a;
+$light-blue: #5c6bc0;
+
+$font-small: clamp(0.75em, 2.5vmin, 1em);
+$font-medium: 1.25em;
+$font-large: clamp(1.25em, 4vmin, 1.5em);
+
+// Mixins
+@mixin flex($flex-direction, $justify-content, $align-items, $gap) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+}
+
+@mixin button(
+  $bg-color: $primary,
+  $color: #fff,
+  $border-radius: 0.3em,
+  $font-size: $font-small,
+  $padding: 0.5em 1.25em,
+) {
+  border-radius: $border-radius;
+  background-color: $bg-color;
+  color: $color;
+  font-size: $font-size;
+  padding: $padding;
+}
+
+// Resets
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove annoying default styles for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  border-radius: 0;
+}
+
+/* Remove text decoration for anchor elements */
+a {
+  text-decoration: none;
+}
+
+/* Font size styles */
+
+p,
+span {
+  font-size: $font-small;
+}
+
+h2 {
+  font-size: $font-medium;
+}
+
+h1 {
+  font-size: $font-large;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
